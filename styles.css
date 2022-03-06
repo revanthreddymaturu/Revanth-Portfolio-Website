@@ -1,0 +1,310 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /*
+        Purple: hsl(250, 66%, 75%)
+        Blue: hsl(207, 90%, 72%)
+        Pink: hsl(356, 66%, 75%)
+        Teal: hsl(174, 63%, 62%)
+  */
+  --first-hue: 250;
+  --sat: 66%;
+  --lig: 72%;
+  --second-hue: 219;
+
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
+  --title-color: hsl(var(--second-hue), 15%, 95%);
+  --text-color: hsl(var(--second-hue), 8%, 75%);
+  --text-color-light: hsl(var(--second-hue), 4%, 55%);
+  --body-color: hsl(var(--second-hue), 48%, 8%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Resetting HTML */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.4s; /* for light mode animation */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 950px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semibold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+
+/*========== Variables Dark theme ==========*/
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+
+/*Classes */
+
+.header {
+  position: fixed;
+  z-index: var(--z-fixed);
+  width: 65%;
+  background-color: var(--body-color);
+}
+.section__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8.5rem 0 2rem;
+}
+.navbar__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 1.5rem 0;
+  font-size: 1rem;
+}
+.bx {
+  font-size: 1.2rem;
+}
+.navbar__list2:hover,
+.navbar__list1:hover {
+  color: hsl(250, 66%, 75%);
+}
+.navbar__list1,
+.navbar__list2 {
+  cursor: pointer;
+}
+.my__name {
+  font-size: var(--biggest-font-size);
+}
+.my__title {
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+.center__h4,
+.my__title,
+.my__name,
+.align__center {
+  text-align: center;
+}
+.navbar__menulist,
+.navbar__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__link,
+a {
+  color: var(--title-color);
+}
+.navbar__item {
+  margin: 0 1rem;
+  padding: 0.6rem;
+  background: linear-gradient(
+    180deg,
+    hsla(var(--first-hue), var(--sat), var(--lig), 1),
+    hsla(var(--first-hue), var(--sat), var(--lig), 0.2)
+  );
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), 0.4);
+  border-radius: 5rem;
+}
+.section2__btn--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.icon-bg {
+  color: hsl(250, 66%, 75%);
+}
+.download__btn {
+  color: hsl(250, 66%, 75%);
+  background-color: hsl(var(--second-hue), 48%, 8%);
+  border: 2px solid hsl(250, 66%, 75%);
+  border-radius: 0.5rem;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.download__btn:hover {
+  cursor: pointer;
+  color: hsl(var(--second-hue), 48%, 8%);
+  background-color: hsl(250, 66%, 75%);
+  border: 2px solid hsl(var(--second-hue), 48%, 8%);
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+.aboutme__btn,
+.contactme--btn > button {
+  color: hsl(var(--second-hue), 48%, 8%);
+  background-color: hsl(250, 66%, 75%);
+  border: 2px solid hsl(var(--second-hue), 48%, 8%);
+  border-radius: 0.5rem;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.aboutme {
+  padding-top: 6rem;
+}
+.my--img {
+  max-width: 100%;
+  margin-right: 1rem;
+}
+.my--img__pic {
+  border-radius: 5rem;
+}
+.img--experience {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.my--experience {
+  display: flex;
+  flex-direction: column;
+}
+.xp__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 5px;
+}
+.my--xp__item {
+  /* display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;*/
+  background-color: var(--container-color);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+.xp__intro,
+.contactme--btn {
+  margin-top: 2rem;
+}
+.skills {
+  margin-top: 6rem;
+}
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr;
+  gap: 1rem;
+}
+.skills__grid--container {
+  max-width: 20rem;
+  padding: 2rem;
+  background-color: var(--container-color);
+  border-radius: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.margin-bottom {
+  margin-bottom: 2rem;
+}
+.margin-top {
+  margin-top: 6rem;
+}
+.email-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--container-color);
+  width: 15rem;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bold-font {
+  font-weight: bold;
+  color: aliceblue;
+}
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--second-hue), 8%, 38%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--second-hue), 8%, 26%);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--second-hue), 8%, 20%);
+}
